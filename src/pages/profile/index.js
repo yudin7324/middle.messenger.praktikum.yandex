@@ -6,7 +6,7 @@ const data = {
   fields: [
     {
       label: "Почта",
-      name: "mail",
+      name: "email",
       type: "text",
     },
     {
@@ -16,12 +16,17 @@ const data = {
     },
     {
       label: "Имя",
-      name: "name",
+      name: "first_name",
       type: "text",
     },
     {
       label: "Фамилия",
-      name: "last_name",
+      name: "second_name",
+      type: "text",
+    },
+    {
+      label: "Имя в чате",
+      name: "display_name",
       type: "text",
     },
     {
