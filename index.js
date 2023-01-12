@@ -61,6 +61,7 @@ route("/change-password", "change-password");
 
 function resolveRoute(route) {
   try {
+    console.log(routes[route]);
     return routes[route];
   } catch (e) {
     throw new Error(`Route ${route} not found`);
@@ -68,9 +69,9 @@ function resolveRoute(route) {
 }
 
 function router(evt) {
-  let url = window.location.hash.slice(1) || "/";
+  let url = window.location.pathname || "/";
   let route = resolveRoute(url);
-
+  console.log(url);
   route();
 }
 
