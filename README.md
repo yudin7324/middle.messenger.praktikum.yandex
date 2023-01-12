@@ -1,4 +1,4 @@
-### [Ссылка на PR sprint 1]([https://github.com/facebook/react](https://github.com/IYDoe/middle.messenger.praktikum.yandex/pull/2)) 
+[Ссылка на PR sprint 1]([https://github.com/facebook/react](https://github.com/IYDoe/middle.messenger.praktikum.yandex/pull/2)) 
 ---
 
 
