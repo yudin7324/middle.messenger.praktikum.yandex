@@ -1,0 +1,55 @@
+@import "./src/scss/vars.scss";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: $color-dark;
+  background-color: $color-white;
+}
+
+main, section {
+	display: block;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+:focus {
+  outline: none;
+} 
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+}
+
+@import "./src/scss/field.scss";
+@import "./src/scss/button.scss";
+@import "./src/scss/back-btn.scss";
+@import "./src/scss/upload.scss";
+
+
+@import "./src/pages/signin/style.scss";
+@import "./src/pages/login/style.scss";
+@import "./src/pages/profile/style.scss";
+@import "./src/pages/chat/style.scss";
+@import "./src/pages/error/style.scss";
