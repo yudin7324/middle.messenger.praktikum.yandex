@@ -1,6 +1,5 @@
-[Ссылка на PR sprint 1]([https://github.com/facebook/react](https://github.com/IYDoe/middle.messenger.praktikum.yandex/pull/2)) 
----
 
+«[Ссылка на PR sprint 1]([https://github.com/facebook/react](https://github.com/IYDoe/middle.messenger.praktikum.yandex/pull/2))»
 
 Даже законченный проект остаётся только заготовкой, пока им не начнут пользоваться. Но сначала пользователь должен понять, зачем ему пользоваться вашим кодом. В этом помогает файл README.
 
