@@ -1,0 +1,24 @@
+.profile {
+  position: relative;
+  height: 100vh;
+  padding-top: 64px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__footer {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    padding-bottom: 100px;
+  }
+
+  &__form {
+    margin-left: 128px;
+    max-width: 510px;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="sign-in">
+  <form class="sign-in__form">
+    <h1 class="sign-in__title">{{title}}</h1>
+
+    {{#each fields}}
+      <div class="field">
+        <p class="field__label">{{label}}</p>
+        <input class="field__input" name="{{name}}" type={{type}} />
+      </div>
+    {{/each}}
+
+    <div class="sign-in__buttons">
+      <button
+        type="submit"
+        class="button button_color-secondary"
+      >{{button1}}</button>
+      <a href="/" class="button button_border-secondary">{{button2}}</a>
+    </div>
+  </form>
+</div>
