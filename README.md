@@ -8,7 +8,7 @@
 
 ## Netlify
 
-- «[Netlify](https://yandex-messenger.netlify.app/)»,
+- «[Netlify](https://yandex-messenger.netlify.app)»,
 
 ## Установка зависимостей
 
