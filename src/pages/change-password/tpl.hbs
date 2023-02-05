@@ -1,0 +1,22 @@
+<div class="profile">
+  <a class="back-btn" href="/profile">
+    <img class="back-btn__image" src="{{backIcon}}" />
+  </a>
+
+  <form class="profile__form">
+
+    {{#each fields}}
+      <div class="field field_dark">
+        <p class="field__label">{{label}}</p>
+        <input class="field__input" name="{{name}}" type={{type}} />
+      </div>
+    {{/each}}
+
+    <div class="profile__footer">
+      <button
+        type="submit"
+        class="button button_color-secondary"
+      >{{save}}</button>
+    </div>
+  </form>
+</div>
