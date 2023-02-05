@@ -14,7 +14,7 @@ const tpl = `
           <div class="chat__name_avatar"></div>
           <h3 class="chat__name_title">Илья</h3>
         </div>
-        <button><img src={{ menuImage }} /></button>
+        <button><img src={{ menuImage }} alt="menu-image" /></button>
       </div>
       <ul class="messages">
         <li class="messages__message messages__message_own">сообщение</li>

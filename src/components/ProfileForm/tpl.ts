@@ -1,7 +1,7 @@
 const tpl = `
     <div class="profile__header">
       <div class="upload">
-        <img class="upload__image" id="upload-preview" />
+        <img class="upload__image" id="upload-preview" alt="upload-image" />
         <label class="upload__label">
           <input
             name="avatar"
