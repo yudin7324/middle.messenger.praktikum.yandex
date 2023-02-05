@@ -6,7 +6,9 @@ import {
   profilePage,
   changePasswordPage,
   chatsPage,
+  manePage,
 } from "./src/pages";
+import mainPage from "./src/pages/main";
 
 import { renderDOM } from "./src/utils";
 
@@ -32,6 +34,10 @@ function template(
   return (templates[name] = templateFunction);
 }
 
+template("main", function () {
+  renderDOM("#root", mainPage);
+});
+
 template("login", function () {
   renderDOM("#root", loginPage);
 });
@@ -56,7 +62,8 @@ template("change-password", function () {
   renderDOM("#root", changePasswordPage);
 });
 
-route("/", "login");
+route("/", "main");
+route("/login", "login");
 route("/sign-in", "sign-in");
 route("/error", "error");
 route("/profile", "profile");

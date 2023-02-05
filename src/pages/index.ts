@@ -4,6 +4,7 @@ import errorPage from "./error/index";
 import profilePage from "./profile/index";
 import changePasswordPage from "./changePassword/index";
 import chatsPage from "./chats/index";
+import manePage from "./main/index";
 
 export {
   signInPage,
@@ -12,4 +13,5 @@ export {
   profilePage,
   changePasswordPage,
   chatsPage,
+  manePage,
 };
