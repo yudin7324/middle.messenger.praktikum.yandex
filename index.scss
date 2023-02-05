@@ -18,8 +18,6 @@ body {
   font-weight: 400;
   color: $color-dark;
   background-color: $color-white;
-
-  -webkit-tap-highlight-color: transparent;
 }
 
 main, section {
@@ -44,8 +42,8 @@ button, input, textarea, select {
   cursor: pointer;
 }
 
-@import "./src/components/Button/button.scss";
-@import "./src/components/TextField/textfield.scss";
+@import "./src/scss/field.scss";
+@import "./src/scss/button.scss";
 @import "./src/scss/back-btn.scss";
 @import "./src/scss/upload.scss";
 
@@ -53,5 +51,5 @@ button, input, textarea, select {
 @import "./src/pages/signin/style.scss";
 @import "./src/pages/login/style.scss";
 @import "./src/pages/profile/style.scss";
-@import "./src/pages/chats/style.scss";
+@import "./src/pages/chat/style.scss";
 @import "./src/pages/error/style.scss";

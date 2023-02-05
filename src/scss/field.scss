@@ -1,0 +1,33 @@
+.field {
+  width: 100%;
+  margin-bottom: 15px;
+
+  &__label {
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 500;
+    color: $color-white;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 500;
+    padding-left: 10px;
+    height: 35px;
+    width: 100%;
+    border: 1px solid $color-primary;
+    color: $color-white;
+  }
+
+  &_dark {
+    .field__label {
+      color: $color-dark;
+    }
+  
+    .field__input {
+      color: $color-dark;
+    }
+  }
+}
