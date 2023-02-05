@@ -17,24 +17,27 @@ class ProfilePage extends Component<ProfilePageType> {
 
 const { email, login, firstName, secondName, phone, displayName } = profileData;
 
-const focusEvent = (event: any) => {
-  const parent = event.target.parentNode;
-  const error = parent.querySelector(".field__error-text");
+const focusEvent = (event: Event) => {
+  const target = event.target as HTMLElement;
+  const parent = target.parentNode as HTMLElement;
+  const error = parent.querySelector(".field__error-text") as HTMLElement;
   error.innerHTML = "";
 
-  if (event.target.classList.contains("field__input_invalid")) {
-    event.target.classList.remove("field__input_invalid");
+  if (target.classList.contains("field__input_invalid")) {
+    target.classList.remove("field__input_invalid");
   }
 };
 
-const blurEvent = (event: any, errorText: string, pattern: RegExp) => {
-  const value = event.target.value;
-  const parent = event.target.parentNode;
-  const error = parent.querySelector(".field__error-text");
+const blurEvent = (event: Event, errorText: string, pattern: RegExp) => {
+  const target = event.target as HTMLInputElement;
+  const parent = target.parentNode as HTMLElement;
+  const value = target.value;
+
+  const error = parent.querySelector(".field__error-text") as HTMLElement;
 
   if (!pattern.test(value)) {
     error.innerHTML = errorText;
-    event.target.classList.add("field__input_invalid");
+    target.classList.add("field__input_invalid");
   } else {
     error.innerHTML = "";
   }
@@ -49,8 +52,8 @@ const emailTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) => blurEvent(event, email.errorText, email.pattern),
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event, email.errorText, email.pattern),
   },
 });
 
@@ -63,8 +66,8 @@ const loginTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) => blurEvent(event, login.errorText, login.pattern),
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event, login.errorText, login.pattern),
   },
 });
 
@@ -77,8 +80,8 @@ const firstNameTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) =>
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) =>
       blurEvent(event, firstName.errorText, firstName.pattern),
   },
 });
@@ -92,8 +95,8 @@ const secondNameTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) =>
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) =>
       blurEvent(event, secondName.errorText, secondName.pattern),
   },
 });
@@ -107,8 +110,8 @@ const phoneTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) => blurEvent(event, phone.errorText, phone.pattern),
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event, phone.errorText, phone.pattern),
   },
 });
 
@@ -121,8 +124,8 @@ const displayNameField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) =>
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) =>
       blurEvent(event, displayName.errorText, displayName.pattern),
   },
 });
@@ -165,11 +168,12 @@ const form = new ProfileForm("form", {
     class: "profile__form",
   },
   events: {
-    submit: (event: any) => {
+    submit: (event: Event) => {
       event.preventDefault();
       const errors: string[] = [];
 
-      const textFields = event.target.querySelectorAll(".field");
+      const target = event.target as HTMLElement;
+      const textFields = target.querySelectorAll(".field");
       const elements = Array.from(textFields);
 
       elements.forEach((element: HTMLInputElement) => {
@@ -184,12 +188,12 @@ const form = new ProfileForm("form", {
       });
 
       if (errors.length <= 0) {
-        const dataArray = elements.map((element: any) => {
+        const dataArray = elements.map((element: HTMLElement) => {
           const input = element.querySelector("input");
 
           return {
-            name: input.name,
-            value: input.value,
+            name: input ? input.name : "",
+            value: input ? input.value : "",
           };
         });
 

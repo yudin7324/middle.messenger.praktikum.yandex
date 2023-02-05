@@ -48,9 +48,10 @@ const chatFooter = new ChatFooter("form", {
     type: "submit",
   },
   events: {
-    submit: (event: any) => {
+    submit: (event: Event) => {
       event.preventDefault();
-      const inputMessage = event.target.querySelector("input");
+      const target = event.target as HTMLElement;
+      const inputMessage = target.querySelector("input") as HTMLInputElement;
 
       if (inputMessage.value) {
         const data = {

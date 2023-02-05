@@ -2,7 +2,7 @@ import tpl from "./tpl";
 import { Component } from "../../services";
 
 type TextFieldType = {
-  events: any;
+  events: Event;
   label: string;
   type: string;
   name: string;

@@ -17,24 +17,27 @@ class ChangePasswordPage extends Component<ChangePasswordPageType> {
 
 const { oldPassword, newPassword, confrimNewPassword } = changePasswordData;
 
-const focusEvent = (event: any) => {
-  const parent = event.target.parentNode;
-  const error = parent.querySelector(".field__error-text");
+const focusEvent = (event: Event) => {
+  const target = event.target as HTMLElement;
+  const parent = target.parentNode as HTMLElement;
+  const error = parent.querySelector(".field__error-text") as HTMLElement;
   error.innerHTML = "";
 
-  if (event.target.classList.contains("field__input_invalid")) {
-    event.target.classList.remove("field__input_invalid");
+  if (target.classList.contains("field__input_invalid")) {
+    target.classList.remove("field__input_invalid");
   }
 };
 
-const blurEvent = (event: any, errorText: string, pattern: RegExp) => {
-  const value = event.target.value;
-  const parent = event.target.parentNode;
-  const error = parent.querySelector(".field__error-text");
+const blurEvent = (event: Event, errorText: string, pattern: RegExp) => {
+  const target = event.target as HTMLInputElement;
+  const parent = target.parentNode as HTMLElement;
+  const value = target.value;
+
+  const error = parent.querySelector(".field__error-text") as HTMLElement;
 
   if (!pattern.test(value)) {
     error.innerHTML = errorText;
-    event.target.classList.add("field__input_invalid");
+    target.classList.add("field__input_invalid");
   } else {
     error.innerHTML = "";
   }
@@ -49,8 +52,8 @@ const oldPasswordTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) =>
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) =>
       blurEvent(event, oldPassword.errorText, oldPassword.pattern),
   },
 });
@@ -64,8 +67,8 @@ const newPasswordTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) =>
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) =>
       blurEvent(event, newPassword.errorText, newPassword.pattern),
   },
 });
@@ -79,8 +82,8 @@ const confrimNewPasswordTextField = new TextField("div", {
     class: "field field_dark",
   },
   events: {
-    focus: (event: any) => focusEvent(event),
-    blur: (event: any) =>
+    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) =>
       blurEvent(
         event,
         confrimNewPassword.errorText,
@@ -106,11 +109,12 @@ const form = new ChangePasswordForm("form", {
     class: "profile__form",
   },
   events: {
-    submit: (event: any) => {
+    submit: (event: Event) => {
       event.preventDefault();
       const errors: string[] = [];
+      const target = event.target as HTMLElement;
 
-      const textFields = event.target.querySelectorAll(".field");
+      const textFields = target.querySelectorAll(".field");
       const elements = Array.from(textFields);
 
       elements.forEach((element: HTMLInputElement) => {
@@ -125,12 +129,12 @@ const form = new ChangePasswordForm("form", {
       });
 
       if (errors.length <= 0) {
-        const dataArray = elements.map((element: any) => {
+        const dataArray = elements.map((element: HTMLElement) => {
           const input = element.querySelector("input");
 
           return {
-            name: input.name,
-            value: input.value,
+            name: input ? input.name : "",
+            value: input ? input.value : "",
           };
         });
 
