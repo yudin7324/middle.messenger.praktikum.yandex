@@ -1,10 +1,7 @@
 import tpl from "./tpl";
 import { Component } from "../../../services";
 
-type ChatFooterType = {
-  attachImage: string;
-  enterImage: string;
-};
+type ChatFooterType = {};
 
 class ChatFooter extends Component<ChatFooterType> {
   render(): DocumentFragment {
