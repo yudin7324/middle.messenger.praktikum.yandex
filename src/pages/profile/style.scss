@@ -3,12 +3,22 @@
   min-height: 100vh;
   height: 100%;
   padding: 64px;
+  flex-direction: column;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    max-width: 510px;
+    width: 100%;
+    margin-left: 128px;
   }
 
   &__footer {
@@ -21,5 +31,6 @@
   &__form {
     margin-left: 128px;
     max-width: 510px;
+    width: 100%;
   }
 }

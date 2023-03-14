@@ -93,14 +93,21 @@ class Component<T = {}> {
   // Может переопределять пользователь, необязательно трогать
   componentDidMount(oldProps?: { events?: () => void; attr?: string }) {}
 
-  dispatchComponentDidMount() {}
+  dispatchComponentDidMount() {
+    this._eventBus.emit(Component.EVENTS.FLOW_CDM);
+    if (Object.keys(this._children).length)
+      this._eventBus.emit(Component.EVENTS.FLOW_RENDER);
+  }
 
-  _componentDidUpdate(oldProps: any, newProps: any) {
-    const response = this.componentDidUpdate(oldProps, newProps);
-    if (!response) {
-      return;
+  _componentDidUpdate(
+    oldProps: { events?: (() => void) | undefined; attr?: string | undefined },
+    newProps: { events?: (() => void) | undefined; attr?: string | undefined }
+  ) {
+    const isReRender = this.componentDidUpdate(oldProps, newProps);
+
+    if (isReRender) {
+      this._eventBus().emit(Component.EVENTS.FLOW_RENDER);
     }
-    this._render();
   }
 
   // Может переопределять пользователь, необязательно трогать
@@ -129,9 +136,9 @@ class Component<T = {}> {
       Object.assign(this._props, props);
     }
 
-    if (this._setUpdate) {
-      this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldValue, this._props);
-      this._setUpdate = false;
+    if (!this._setUpdate) {
+      this._eventBus().emit(Component.EVENTS.FLOW_CDU, oldValue, this._props);
+      this._setUpdate = true;
     }
   };
 
@@ -173,8 +180,8 @@ class Component<T = {}> {
   addAttribute() {
     const { attr = {} } = this._props;
 
-    Object.entries(attr).forEach((key: [string, string]) => {
-      this._element.setAttribute(key[0], key[1]);
+    Object.entries(attr).forEach(([key, value]: [any, string]) => {
+      this._element.setAttribute(key, value);
     });
   }
 
@@ -232,6 +239,14 @@ class Component<T = {}> {
     });
 
     return fragment.content;
+  }
+
+  show() {
+    this.getContent().style.display = "flex";
+  }
+
+  hide() {
+    this.getContent().style.display = "none";
   }
 }
 

@@ -1,9 +1,7 @@
 import tpl from "./tpl";
-import enterImage from "../../../static/images/enter.png";
-import attachImage from "../../../static/images/attach.png";
-import menuImage from "../../../static/images/menu.png";
 import { Component } from "../../services";
-import { ChatCard, ChatFooter } from "../../components/chats";
+import { Sidebar, Chat } from "../../components/chats";
+import { ChatsController, UserController } from "../../controllers";
 
 type ErrorType = {
   chatCard: HTMLElement;
@@ -12,7 +10,20 @@ type ErrorType = {
   chatFooter: HTMLElement;
 };
 
-class ChatsPage extends Component<ErrorType> {
+class ChatsComponent extends Component<ErrorType> {
+  constructor() {
+    ChatsController.getChats();
+    UserController.getUser();
+
+    super("div", {
+      sidebar: Sidebar,
+      chat: Chat,
+      attr: {
+        class: "chats-page",
+      },
+    });
+  }
+
   render(): DocumentFragment {
     const fragment: DocumentFragment = this.compile(tpl);
 
@@ -20,61 +31,4 @@ class ChatsPage extends Component<ErrorType> {
   }
 }
 
-const chatCard = new ChatCard("div", {
-  name: "Илья",
-  countMessage: "1",
-  time: "10:45",
-  lastMessage: "Привет",
-  attr: {
-    class: "chat-card",
-  },
-});
-
-const chatCardActive = new ChatCard("div", {
-  name: "Андрей",
-  countMessage: "2",
-  time: "10:45",
-  lastMessage: "Пока",
-  attr: {
-    class: "chat-card chat-card--active",
-  },
-});
-
-const chatFooter = new ChatFooter("form", {
-  enterImage: enterImage,
-  attachImage: attachImage,
-  attr: {
-    class: "chat__footer",
-    type: "submit",
-  },
-  events: {
-    submit: (event: Event) => {
-      event.preventDefault();
-      const target = event.target as HTMLElement;
-      const inputMessage = target.querySelector("input") as HTMLInputElement;
-
-      if (inputMessage.value) {
-        const data = {
-          name: "message",
-          value: inputMessage.value,
-        };
-
-        console.log(data);
-        inputMessage.value = "";
-      }
-    },
-  },
-});
-
-const signInPage = new ChatsPage("div", {
-  chatCard: chatCard,
-  chatCardActive: chatCardActive,
-
-  menuImage: menuImage,
-  chatFooter: chatFooter,
-  attr: {
-    class: "chats-page",
-  },
-});
-
-export default signInPage;
+export default ChatsComponent;

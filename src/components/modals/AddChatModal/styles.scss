@@ -1,0 +1,49 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    position: relative;
+    background-color: $color-white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+  }
+
+  &_active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__input {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: $color-dark;
+    margin-bottom: 30px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}

@@ -1,5 +1,15 @@
-import signInData from "./signIn";
-import profileData from "./profile";
+import profileValidationRules from "./profile";
 import changePasswordData from "./changePassword";
+import loginValidationRules from "./login";
+import signUpValidationRules from "./signUp";
+import passwordValidationRules from "./password";
+import addChatValidationRules from "./chat";
 
-export { signInData, profileData, changePasswordData };
+export {
+  profileValidationRules,
+  changePasswordData,
+  loginValidationRules,
+  signUpValidationRules,
+  passwordValidationRules,
+  addChatValidationRules,
+};

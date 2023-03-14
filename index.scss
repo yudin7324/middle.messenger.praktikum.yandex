@@ -46,18 +46,17 @@ button, input, textarea, select {
 
 @import "./src/components/Button/button.scss";
 @import "./src/components/TextField/textfield.scss";
-@import "./src/scss/back-btn.scss";
-@import "./src/scss/upload.scss";
 @import "./src/components/Nav/Nav.scss";
+@import "./src/components/profile/Avatar/avatar.scss";
+@import "./src/components/chats/Sidebar/sidebar.scss";
+@import "./src/scss/back-btn.scss";
 
 
+@import "./src/pages/signup/style.scss";
 @import "./src/pages/signin/style.scss";
-@import "./src/pages/login/style.scss";
 @import "./src/pages/profile/style.scss";
 @import "./src/pages/chats/style.scss";
 @import "./src/pages/error/style.scss";
-<<<<<<< HEAD
-@import "./src/pages/main/style.scss";
-=======
-@import "./src/pages/main/style.scss";
->>>>>>> 57da8fcfa4b37f7fd34305995dccaf7a9ad9fe30
+
+@import "./src/components/modals/AddChatModal/styles.scss";
+@import "./src/components/modals/AddUserModal/styles.scss";

@@ -1,0 +1,76 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &_avatar {
+      width: 34px;
+      height: 34px;
+      background-color: $color-primary;
+      border-radius: 50%;
+      overflow: hidden;
+    } 
+
+    &_title {
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-top: 1px solid $color-secondary;
+  }
+
+  &__message-text {
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 500;
+    padding-left: 10px;
+    height: 35px;
+    width: calc(100% - 20px);
+    background-color: $color-secondary-transparent;
+    color: $color-dense;
+    flex-grow: 1;
+  }
+
+  &__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 600;
+    color: $color-dense;
+  }
+
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+
+@import '../Messages/style.scss';

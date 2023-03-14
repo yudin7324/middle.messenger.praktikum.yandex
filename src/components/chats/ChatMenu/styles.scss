@@ -1,0 +1,25 @@
+.chat-menu {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  padding: 10px;
+  background-color: $color-white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &__item {
+    cursor: pointer;
+    color: $color-dense;
+    font-size: 14px;
+    padding: 7px 0;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &_active {
+    display: block;
+  }
+}
