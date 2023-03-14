@@ -1,7 +1,7 @@
 import "./index.scss";
 import {
   signUpPage,
-  loginPage,
+  signInPage,
   errorPage,
   profilePage,
   changePasswordPage,
@@ -18,7 +18,7 @@ declare global {
 
 window.myAppStore = Store;
 
-Router.use("/", loginPage, {})
+Router.use("/", signInPage, {})
   .use("/sign-up", signUpPage, {})
   .use("/settings", profilePage, {})
   .use("/messenger", chatsPage, {})
