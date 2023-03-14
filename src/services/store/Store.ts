@@ -1,4 +1,4 @@
-import EventBus from "../EventBus";
+import { EventBus } from "../../services";
 
 export enum StoreEvents {
   Updated = "updated",
