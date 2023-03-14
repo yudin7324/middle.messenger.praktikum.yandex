@@ -1,11 +1,11 @@
 import "./index.scss";
 import {
-  signUpPage,
-  signInPage,
-  errorPage,
-  profilePage,
-  changePasswordPage,
-  chatsPage,
+  SignUpPage,
+  SignInPage,
+  ErrorPage,
+  ProfilePage,
+  ChangePasswordPage,
+  ChatsPage,
 } from "./src/pages";
 import { Router } from "./src/services/router";
 import Store from "./src/services/store";
@@ -18,10 +18,10 @@ declare global {
 
 window.myAppStore = Store;
 
-Router.use("/", signInPage, {})
-  .use("/sign-up", signUpPage, {})
-  .use("/settings", profilePage, {})
-  .use("/messenger", chatsPage, {})
-  .use("/change-password", changePasswordPage, {})
-  .use("/error", errorPage, {})
+Router.use("/", SignInPage, {})
+  .use("/sign-up", SignUpPage, {})
+  .use("/settings", ProfilePage, {})
+  .use("/messenger", ChatsPage, {})
+  .use("/change-password", ChangePasswordPage, {})
+  .use("/error", ErrorPage, {})
   .start();
