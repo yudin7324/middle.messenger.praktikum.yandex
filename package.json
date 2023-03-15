@@ -29,7 +29,6 @@
     "parcel": "2.8.2",
     "parcel-transformer-hbs": "1.0.4",
     "stylelint": "14.16.1",
-    "stylelint-config-standard": "30.0.1",
     "typescript": "4.9.5"
   },
   "engines": {
