@@ -61,6 +61,10 @@ class UserController {
       const response = AuthAPI.signIn(formValues);
 
       response.then((data) => {
+        if (JSON.parse(data).reason === "User already in system") {
+          return Router.go("/messenger");
+        }
+
         if (data === "OK") {
           this.getUser();
         } else {
