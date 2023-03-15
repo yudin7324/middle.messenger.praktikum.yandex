@@ -6,7 +6,7 @@
   background: $color-dense;
   position: relative;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -39,7 +39,7 @@
 
   &__input {
     display: none;
-    height: 0px;
+    height: 0;
   }
 }
 

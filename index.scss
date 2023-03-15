@@ -1,6 +1,6 @@
-@import "./src/scss/vars.scss";
+@import "./src/scss/vars";
 
-*, *:before, *:after {
+&*, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -14,11 +14,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
   font-weight: 400;
   color: $color-dark;
   background-color: $color-white;
-
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -31,7 +30,7 @@ img {
   border: 0;
 }
 
-:focus {
+&:focus {
   outline: none;
 } 
 
@@ -44,19 +43,16 @@ button, input, textarea, select {
   cursor: pointer;
 }
 
-@import "./src/components/Button/button.scss";
-@import "./src/components/TextField/textfield.scss";
-@import "./src/components/Nav/Nav.scss";
-@import "./src/components/profile/Avatar/avatar.scss";
-@import "./src/components/chats/Sidebar/sidebar.scss";
-@import "./src/scss/back-btn.scss";
-
-
-@import "./src/pages/signup/style.scss";
-@import "./src/pages/signin/style.scss";
-@import "./src/pages/profile/style.scss";
-@import "./src/pages/chats/style.scss";
-@import "./src/pages/error/style.scss";
-
-@import "./src/components/modals/AddChatModal/styles.scss";
-@import "./src/components/modals/AddUserModal/styles.scss";
+@import "./src/components/Button/button";
+@import "./src/components/TextField/textfield";
+@import "./src/components/Nav/Nav";
+@import "./src/components/profile/Avatar/avatar";
+@import "./src/components/chats/Sidebar/sidebar";
+@import "./src/scss/back-btn";
+@import "./src/pages/signup/style";
+@import "./src/pages/signin/style";
+@import "./src/pages/profile/style";
+@import "./src/pages/chats/style";
+@import "./src/pages/error/style";
+@import "./src/components/modals/AddChatModal/styles";
+@import "./src/components/modals/AddUserModal/styles";
