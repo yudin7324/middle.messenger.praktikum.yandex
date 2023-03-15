@@ -6,7 +6,7 @@
   "scripts": {
     "build": "parcel build --no-cache",
     "dev": "parcel --no-cache --port 3000",
-    "start": "node server.js"
+    "start": "parcel build --no-cache && node server.js"
   },
   "repository": {
     "type": "git",
