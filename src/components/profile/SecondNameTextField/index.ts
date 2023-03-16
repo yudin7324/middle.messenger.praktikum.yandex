@@ -1,6 +1,6 @@
 import { Connect } from "../../../services/store";
 import { TextField } from "../../../components";
-import { focusEvent } from "../../../utils";
+import { focusEvent, blurEvent } from "../../../utils";
 
 const textField = Connect(TextField, (state: any) => {
   return {
@@ -19,6 +19,7 @@ const SecondNameTextField = new textField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 

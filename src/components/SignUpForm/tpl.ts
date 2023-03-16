@@ -7,7 +7,6 @@ const tpl = `
   {{{ secondNameTextField }}}
   {{{ phoneTextField }}}
   {{{ passwordTextField }}}
-  {{{ confirmPasswordTextField }}}
 
   <div class="sign-up__buttons">
     {{{ link }}}

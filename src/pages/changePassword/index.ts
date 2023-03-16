@@ -3,7 +3,7 @@ import { Component } from "../../services";
 import { Button, TextField } from "../../components";
 import { Form } from "../../components/changePassword";
 import backBtnIcon from "../../../static/images/back-btn.png";
-import { convertedFormData, focusEvent } from "../../utils";
+import { convertedFormData, focusEvent, blurEvent } from "../../utils";
 import { ProfileController } from "../../controllers";
 
 type ChangePasswordPageType = {
@@ -21,6 +21,7 @@ const oldPasswordTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -34,19 +35,7 @@ const newPasswordTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
-  },
-});
-
-const confrimNewPasswordTextField = new TextField("div", {
-  label: "Повторите пароль",
-  name: "confrimNewPassword",
-  type: "password",
-  text: "Некорректные данные",
-  attr: {
-    class: "field field_dark",
-  },
-  events: {
-    focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -61,7 +50,6 @@ const saveButton = new Button("button", {
 const form = new Form("form", {
   oldPasswordTextField: oldPasswordTextField,
   newPasswordTextField: newPasswordTextField,
-  confrimNewPasswordTextField: confrimNewPasswordTextField,
   saveButton: saveButton,
   attr: {
     class: "profile__form",

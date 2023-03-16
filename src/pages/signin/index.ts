@@ -1,7 +1,7 @@
 import tpl from "./tpl";
 import { Component } from "../../services";
 import { Button, TextField } from "../../components";
-import { convertedFormData, focusEvent } from "../../utils";
+import { convertedFormData, focusEvent, blurEvent } from "../../utils";
 import { SignInPageType } from "../../types/signin";
 import { UserController } from "../../controllers";
 import { Form } from "../../components/signIn";
@@ -16,6 +16,7 @@ const loginTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -29,6 +30,7 @@ const passwordTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 

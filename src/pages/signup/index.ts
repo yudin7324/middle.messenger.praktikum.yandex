@@ -1,7 +1,7 @@
 import tpl from "./tpl";
 import { Component } from "../../services";
 import { Button, TextField, SignUpForm } from "../../components";
-import { convertedFormData, focusEvent } from "../../utils";
+import { convertedFormData, focusEvent, blurEvent } from "../../utils";
 import { SignUpController } from "../../controllers";
 
 type SignupPageType = {
@@ -18,6 +18,7 @@ const emailTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -31,6 +32,7 @@ const loginTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -44,6 +46,7 @@ const firstNameTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -57,6 +60,7 @@ const secondNameTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -70,6 +74,7 @@ const phoneTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
@@ -84,22 +89,23 @@ const passwordTextField = new TextField("div", {
   },
   events: {
     focus: (event: Event) => focusEvent(event),
+    blur: (event: Event) => blurEvent(event),
   },
 });
 
-const confirmPasswordTextField = new TextField("div", {
-  name: "confirm_password",
-  type: "password",
-  label: "Пароль (еще раз)",
-  text: "Некорректные данные",
-  attr: {
-    class: "field",
-    autocomplete: "on",
-  },
-  events: {
-    focus: (event: Event) => focusEvent(event),
-  },
-});
+// const confirmPasswordTextField = new TextField("div", {
+//   name: "confirm_password",
+//   type: "password",
+//   label: "Пароль (еще раз)",
+//   text: "Некорректные данные",
+//   attr: {
+//     class: "field",
+//     autocomplete: "on",
+//   },
+//   events: {
+//     focus: (event: Event) => focusEvent(event),
+//   },
+// });
 
 const link = new Button("button", {
   text: "Зарегестрироваться",
@@ -123,7 +129,7 @@ const form = new SignUpForm("form", {
   secondNameTextField: secondNameTextField,
   phoneTextField: phoneTextField,
   passwordTextField: passwordTextField,
-  confirmPasswordTextField: confirmPasswordTextField,
+  // confirmPasswordTextField: confirmPasswordTextField,
   button: button,
   link: link,
   title: "Регистрация",

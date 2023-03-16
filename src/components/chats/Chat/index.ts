@@ -45,6 +45,10 @@ const chatFooter = new ChatFooter("form", {
       const target = event.target as HTMLElement;
       const input = target.querySelector("input") as HTMLInputElement;
 
+      if (!input.value) {
+        return;
+      }
+
       ChatsController.sendMessage(input.value);
 
       input.value = "";

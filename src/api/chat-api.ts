@@ -1,8 +1,6 @@
 import { HttpClient } from "../utils";
 
-const chatAPIInstance = new HttpClient(
-  "https://ya-praktikum.tech/api/v2/chats"
-);
+const chatAPIInstance = new HttpClient();
 
 class ChatAPI {
   public get() {

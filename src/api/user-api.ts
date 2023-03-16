@@ -1,7 +1,7 @@
 import { HttpClient } from "../utils";
 import { Profile, ChangePassword } from "types/profile";
 
-const userAPIInstance = new HttpClient("https://ya-praktikum.tech/api/v2/user");
+const userAPIInstance = new HttpClient();
 
 class UserAPI {
   public changeUserProfile(userData: Profile) {

@@ -2,7 +2,7 @@ import { HttpClient } from "../utils";
 import { LoginRequest } from "types/signin";
 import { SignupRequest } from "types/signup";
 
-const authAPIInstance = new HttpClient("https://ya-praktikum.tech/api/v2/auth");
+const authAPIInstance = new HttpClient();
 
 class AuthAPI {
   public signIn(user: LoginRequest) {
