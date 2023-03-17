@@ -2,7 +2,7 @@ class HttpClient {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = "https://ya-praktikum.tech/api/v2/auth";
+    this.baseUrl = "https://ya-praktikum.tech/api/v2";
   }
 
   private createXHR(

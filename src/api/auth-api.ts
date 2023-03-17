@@ -7,24 +7,24 @@ const authAPIInstance = new HttpClient();
 class AuthAPI {
   public signIn(user: LoginRequest) {
     const headers = { "Content-Type": "application/json" };
-    const response = authAPIInstance.post("/signin", user, headers);
+    const response = authAPIInstance.post("/auth/signin", user, headers);
     return response;
   }
 
   public getUser() {
     const headers = { "Content-Type": "application/json" };
-    const response = authAPIInstance.get("/user", headers);
+    const response = authAPIInstance.get("/auth/user", headers);
     return response;
   }
 
   public logout() {
-    const response = authAPIInstance.post("/logout");
+    const response = authAPIInstance.post("/auth/logout");
     return response;
   }
 
   public signUp(user: SignupRequest) {
     const headers = { "Content-Type": "application/json" };
-    const response = authAPIInstance.post("/signup", user, headers);
+    const response = authAPIInstance.post("/auth/signup", user, headers);
     return response;
   }
 }

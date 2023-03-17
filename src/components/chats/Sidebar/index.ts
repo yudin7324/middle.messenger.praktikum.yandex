@@ -88,7 +88,10 @@ const Sidebar = new SidebarConnect("div", {
       const target = event.target as HTMLElement;
       const chatCard = target.closest(".chat-card");
       const chatId = chatCard?.getAttribute("id");
-      // const socket = Store.get("socket");
+
+      if (!chatId) {
+        return;
+      }
 
       ChatsController.getMessages(Number(chatId));
 

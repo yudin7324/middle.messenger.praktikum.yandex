@@ -145,10 +145,23 @@ class ChatsController {
           const chatId = JSON.parse(data);
           if (chatId.id) {
             const res = ChatAPI.get();
-            res.then((data) => {
+            res.then(async (data) => {
               const chats = JSON.parse(data);
-              if (Array.isArray(chats)) {
-                Store.set("chats", chats);
+              const chatsWithToken = [];
+
+              for (const chat of chats) {
+                const token = await this.getToken(chat.id);
+
+                chatsWithToken.push({
+                  id: chat.id,
+                  title: chat.title,
+                  avatar: chat.avatar,
+                  token,
+                });
+              }
+
+              if (Array.isArray(chatsWithToken)) {
+                Store.set("chats", chatsWithToken);
               }
             });
           }
