@@ -1,17 +1,15 @@
-import signInPage from "./signin/index";
-import loginPage from "./login/index";
-import errorPage from "./error/index";
-import profilePage from "./profile/index";
-import changePasswordPage from "./changePassword/index";
-import chatsPage from "./chats/index";
-import manePage from "./main/index";
+import SignUpPage from "./signup/index";
+import SignInPage from "./signin/index";
+import ErrorPage from "./error/index";
+import ProfilePage from "./profile/index";
+import ChangePasswordPage from "./changePassword/index";
+import ChatsPage from "./chats/index";
 
 export {
-  signInPage,
-  loginPage,
-  errorPage,
-  profilePage,
-  changePasswordPage,
-  chatsPage,
-  manePage,
+  SignUpPage,
+  SignInPage,
+  ErrorPage,
+  ProfilePage,
+  ChangePasswordPage,
+  ChatsPage,
 };

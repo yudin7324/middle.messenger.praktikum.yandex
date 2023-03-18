@@ -1,0 +1,12 @@
+.users-list {
+  margin-bottom: 20px;
+
+  &__item {
+    margin-bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

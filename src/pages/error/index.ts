@@ -1,6 +1,7 @@
 import tpl from "./tpl";
 import { Component } from "../../services";
 import { Button } from "../../components";
+import { Router } from "../../services/router";
 
 type ErrorType = {
   title: string;
@@ -8,26 +9,32 @@ type ErrorType = {
   link: HTMLElement;
 };
 
-class ErrorPage extends Component<ErrorType> {
+const button = new Button("button", {
+  text: "Назад",
+  attr: {
+    class: "error__button",
+  },
+  events: {
+    click: () => {
+      Router.back();
+    },
+  },
+});
+
+class errorPage extends Component<ErrorType> {
+  constructor() {
+    super("div", {
+      title: "404",
+      subtitle: "Страница не найдена",
+      button,
+      attr: {
+        class: "error",
+      },
+    });
+  }
   render() {
     return this.compile(tpl);
   }
 }
-
-const link = new Button("a", {
-  text: "Назад к чатам",
-  attr: {
-    class: "error__link",
-    href: "/chat",
-  },
-});
-
-const errorPage = new ErrorPage("div", {
-  link: link,
-  title: "404",
-  attr: {
-    class: "error",
-  },
-});
 
 export default errorPage;

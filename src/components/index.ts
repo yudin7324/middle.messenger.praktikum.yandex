@@ -1,17 +1,6 @@
 import Button from "./Button/index";
 import TextField from "./TextField/index";
-import LoginForm from "./LoginForm/index";
-import SignInForm from "./SignInForm/index";
-import ProfileForm from "./ProfileForm/index";
-import ChangePasswordForm from "./ChangePasswordForm";
+import SignUpForm from "./SignUpForm/index";
 import Nav from "./Nav/index";
 
-export {
-  Button,
-  TextField,
-  LoginForm,
-  SignInForm,
-  ProfileForm,
-  ChangePasswordForm,
-  Nav,
-};
+export { Button, TextField, SignUpForm, Nav };
