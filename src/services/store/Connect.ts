@@ -1,5 +1,5 @@
 import Store from "./Store";
-import Component from "../Component";
+import Component from "../component";
 import { StoreEvents } from "./Store";
 
 function connect(component: typeof Component, mapStateToProps: any) {

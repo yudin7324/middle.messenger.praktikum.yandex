@@ -1,8 +1,5 @@
 import Store from "./Store";
+import Connect from "./Connect";
 
 export default new Store();
-export { default as Connect } from "./Connect";
-
-// export default new Store();
-// export { default as Connect } from "./Connect";
-// export * as Actions from "./Actions";
+export { Connect };

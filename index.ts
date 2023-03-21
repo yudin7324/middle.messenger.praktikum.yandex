@@ -8,15 +8,6 @@ import {
   ChatsPage,
 } from "./src/pages";
 import { Router } from "./src/services/router";
-import Store from "./src/services/store";
-
-declare global {
-  interface Window {
-    myAppStore: typeof Store;
-  }
-}
-
-window.myAppStore = Store;
 
 Router.use("/", SignInPage, {})
   .use("/sign-up", SignUpPage, {})

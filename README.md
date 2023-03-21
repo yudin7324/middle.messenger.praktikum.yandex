@@ -10,6 +10,10 @@
 
 - «[Netlify](https://yandex-messenger.netlify.app)»,
 
+## Render.com
+
+- «[Netlify](https://yandex-messenger.netlify.app)»,
+
 ## Установка зависимостей
 
 npm install
@@ -27,12 +31,3 @@ npm run dev
 npm start
 
 ### Проекст запускается по по адресу http://localhost:3000/
-
-## Пути для открытия страниц
-
-- страница логина : "/",
-- страница регистрации : "/sign-in",
-- страница профиля: "/profile",
-- страница изменения пароля: "/change-password",
-- страница с ошибкой: "/error",
-- страница с чатом: "/chat"

@@ -91,7 +91,7 @@ class Component<T = {}> {
   }
 
   // Может переопределять пользователь, необязательно трогать
-  componentDidMount(oldProps?: { events?: () => void; attr?: string }) {}
+  componentDidMount(_oldProps?: { events?: () => void; attr?: string }) {}
 
   dispatchComponentDidMount() {
     this._eventBus.emit(Component.EVENTS.FLOW_CDM);
@@ -112,8 +112,8 @@ class Component<T = {}> {
 
   // Может переопределять пользователь, необязательно трогать
   componentDidUpdate(
-    oldProps: { events?: () => void; attr?: string },
-    newProps: { events?: () => void; attr?: string }
+    _oldProps: { events?: () => void; attr?: string },
+    _newProps: { events?: () => void; attr?: string }
   ) {
     return true;
   }
