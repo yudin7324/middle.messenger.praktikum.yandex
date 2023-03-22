@@ -1,12 +1,7 @@
 import tpl from "./tpl";
 import { Component } from "../../../services";
 import { Connect } from "../../../services/store";
-import {
-  ChatFooter,
-  Messages,
-  MenuBtn,
-  ChatMenu,
-} from "../../../components/chats";
+import { Footer, Messages, MenuBtn, ChatMenu } from "../../../components/chats";
 import { AddUserModal, DeleteUserModal } from "../../../components/modals";
 import enterImage from "../../../../static/images/enter.png";
 import attachImage from "../../../../static/images/attach.png";
@@ -32,7 +27,7 @@ const ChatConnect = Connect(ChatComponent, (state: any) => {
   };
 });
 
-const chatFooter = new ChatFooter("form", {
+const chatFooter = new Footer("form", {
   enterImage: enterImage,
   attachImage: attachImage,
   attr: {
