@@ -12,7 +12,7 @@
 
 ## Render.com
 
-- «[Netlify](https://yandex-messenger.netlify.app)»,
+- «[Render.com](https://messenger-c8wr.onrender.com)»,
 
 ## Установка зависимостей
 
