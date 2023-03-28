@@ -10,6 +10,6 @@ app.listen(PORT, () => {
   console.log(`app listening on port ${PORT}!`);
 });
 
-app.use("/*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"));
 });
