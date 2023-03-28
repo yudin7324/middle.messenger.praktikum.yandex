@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --mode development --open --hot",
     "build": "webpack --mode=production",
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "stylelint": "npx stylelint **/*.scss",
     "eslint": "npx tsc --noEmit && npx eslint --config=./.eslintrc.json",
     "test": "npm run mocha",
