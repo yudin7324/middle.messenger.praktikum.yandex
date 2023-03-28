@@ -1,9 +1,9 @@
 import tpl from "./tpl";
 import { Component } from "../../../services";
 
-type ChatFooterType = {};
+type FooterType = {};
 
-class ChatFooter extends Component<ChatFooterType> {
+class Footer extends Component<FooterType> {
   render(): DocumentFragment {
     const fragment: DocumentFragment = this.compile(tpl);
 
@@ -11,4 +11,4 @@ class ChatFooter extends Component<ChatFooterType> {
   }
 }
 
-export default ChatFooter;
+export default Footer;

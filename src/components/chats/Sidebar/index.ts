@@ -3,9 +3,9 @@ import { Component } from "../../../services";
 import { Connect } from "../../../services/store";
 import { Button } from "../../../components";
 import { AddChatModal } from "../../../components/modals";
-import Store from "../../../services/store";
 import { isEqual } from "../../../utils";
 import { ChatsController } from "../../../controllers";
+import Store from "../../../services/store";
 
 type SidebarType = {
   attachImage: string;

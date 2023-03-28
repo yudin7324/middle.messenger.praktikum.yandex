@@ -7,6 +7,7 @@ export interface RouteProps {
   leave(): void;
   match(pathname: string): void;
   render(): void;
+  _pathname: string;
 }
 
 class Router {
@@ -75,6 +76,10 @@ class Router {
 
   getRoute(pathname: string) {
     return this.routes.find((route: Route) => route.match(pathname));
+  }
+
+  getCurrentRoute() {
+    return this._currentRoute ? this._currentRoute._pathname : null;
   }
 }
 
